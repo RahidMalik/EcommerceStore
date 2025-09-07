@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce_Electronic</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../lcd.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../lcd.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Mozilla+Headline:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Mozilla+Headline:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Roboto" !important;
+            outline: none !important;
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="pt-16">
+    <!-- header  -->
+    <header>
+        <!-- home btn show start -->
+        <div class="px-4 p-2 flex w-full items-center justify-between bg-[#f8f9fa] fixed top-0 left-0 right-0 z-50">
+            <!-- Circles -->
+            <div class="flex items-center">
+                <div class="bg-red-500 w-3 h-3 rounded-full"></div>
+                <div class="bg-yellow-400 w-3 h-3 rounded-full mx-1"></div>
+                <div class="bg-green-500 w-3 h-3 rounded-full"></div>
+            </div>
+
+            <!-- Button -->
+            <div class="flex items-center relative">
+                <button id="Clickonbtn"
+                    class="relative flex w-full rounded-md sm:max-w-fit bg-white py-1.5 pl-6 pr-20 text-left text-gray-900 shadow-sm ring-1 ring-inset cursor-pointer ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6">
+                    <span class="inline-flex flex-1 justify-center w-full truncate">
+                        <span class="truncate">Page: Home</span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-5 w-5 text-gray-400">
+                            <path fill-rule="evenodd"
+                                d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                </button>
+                <ul role="listbox" id="openUl"
+                    class="absolute top-[35px] z-10 mt-1 max-h-60 w-full overflow-y-auto hidden bg-white py-1 text-base drop-shadow-lg focus:outline-none sm:text-sm">
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="openhome" class="font-normal w-full py-2">Home</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="opensignup" class="font-normal w-full py-2">Signup Page</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="openlogin" class="font-normal w-full py-2">Login Page</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="openwhishlist" class="font-normal w-full py-2">Wishlist</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="opencart" class="font-normal w-full py-2">Cart</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="opencheckout" class="font-normal w-full py-2">Checkout</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="openaccounts" class="font-normal w-full py-2">Account Detail</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="openabout" class="font-normal w-full py-2">About</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="opencontact" class="font-normal w-full py-2">Contact</span>
+                        </div>
+                    </li>
+                    <li class="text-gray-900 hover:bg-gray-100 relative select-none px-3 cursor-pointer">
+                        <div class="flex text-center justify-center">
+                            <span id="opennotfoundpage" class="font-normal w-full py-2">Not Found Page</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center text-xl gap-1 cursor-pointer">
+                <ion-icon name="desktop-outline"></ion-icon>
+                <ion-icon name="tablet-portrait-outline"></ion-icon>
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+        </div>
+
+
+        <!-- end -->
+        <div class="max-w-7xl m-auto ">
+            <div class="bg-black text-white max-w-7xl mx-auto hidden lg:flex space-x-2 py-3 px justify-center">
+                <div></div>
+                <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                <button class="font-semibold "> SHop Now</button>
+                <select class=" absolute right-2   flex justify-end items-center">
+                    <option class="text-black">English</option>
+                    <option class="text-black">urdu</option>
+                </select>
+            </div>
+        </div>
+        <!-- hero section -->
+        <div class=" max-w-7xl mx-auto py-4 sm:py-5 border-b-2 border-gray-200">
+            <div class="px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div class="flex items-center justify-between">
+                    <!-- tital box -->
+                    <div class="shrink-0">
+                        <h1 class="text-3xl font-bold">Exclusive</h1>
+                    </div>
+                    <!-- catagories box -->
+                    <div class="hidden lg:flex lg:items-center lg:space-x-4 lg:justify-center">
+                        <a title
+                            class="inline-flex items-center justify-center px-4 py-2.5 text-base font-extrabold text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-offset-2 focus:ring-ring-300">Home
+                        </a>
+                        <a title
+                            class="inline-flex items-center justify-center px-4 py-2.5 text-base font-extrabold text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-offset-2 focus:ring-ring-300">Contact</a>
+                        <a title
+                            class="inline-flex items-center justify-center px-4 py-2.5 text-base font-extrabold text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-offset-2 focus:ring-ring-300">About</a>
+                        <a title
+                            class="inline-flex items-center justify-center  px-4 py-2.5 text-base font-extrabold text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-offset-2 focus:ring-ring-300">Sign
+                            UP</a>
+                    </div>
+                    <!-- Right Section (Search + Icons) -->
+                    <div class="hidden ml-auto sm:flex lg:ml-0">
+                        <div class="flex justify-center items-center gap-5">
+                            <!-- search box -->
+                            <div class="flex justify-center items-center py-2 px-3 bg-gray-100">
+                                <input type="text" placeholder="What are you looking for?"
+                                    class="inline-flex placeholder:text-sm bg-gray-100 rounded-md cursor-pointer">
+                                <ion-icon name="search-sharp" class="text-xl md hydrated cursor-pointer"></ion-icon>
+                            </div>
+                            <!-- heart & cart icon -->
+                            <ion-icon name="heart-outline"
+                                class="text-xl lg:text-2xl hover:text-red-500 cursor-pointer"></ion-icon>
+                            <ion-icon name="cart-outline"
+                                class="text-xl lg:text-2xl hover:text-red-500 cursor-pointer"></ion-icon>
+                            <ion-icon name="person-outline" class="text-xl lg:text-2xl cursor-pointer"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Mobile toggle menu button (Always visible on mobile) -->
+                    <div class="lg:hidden ml-4">
+                        <button id="menu-toggle" type="button"
+                            class="inline-flex items-center p-2.5 text-gray-900 duration-200 border border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                            <!-- Hamburger Icon -->
+                            <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                            <!-- X Icon -->
+                            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Hidden Mobile Menu -->
+                    <div id="mobile-menu"
+                        class=" hidden flex flex-col absolute top-[96px] left-[20px] right-[20px] bg-gray-200 shadow-md border border-gray-200 rounded-lg lg:hidden p-3">
+                        <a href="#" class="py-3 px-[2px] text-gray-900 hover:bg-red-600">Home</a>
+                        <a href="#" class="py-3 px-[2px] text-gray-900 hover:bg-red-600">About</a>
+                        <a href="#" class="py-3 px-[2px] text-gray-900 hover:bg-red-600">Contact</a>
+                        <a href="#" class="py-3 px-[2px] text-gray-900 hover:bg-red-600">Sign Up</a>
+                        <button
+                            class="bg-red-500 p-3 rounded-[9px] inline-flex justify-center items-center  text-white font-semibold w-full">Shop
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- content  -->
+
+    <section class="mb-14 md:mb-20">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <!-- heading  -->
+            <div class="flex pt-3 justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <div class="w-4 h-8 bg-red-500 rounded-md"></div>
+                    <p class="text-black">Just For You</p>
+                </div>
+                <div>
+                    <button class="border-2 border-gray-300 px-8 py-3 hover:bg-red-500 hover:text-white rounded-md">
+                        See All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cards section-->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/g92_2_500x500_1_80d6b12847.png?updated_at=2025-01-31T06:29:27.886Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="mt-4 h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="eye-outline" role="img" class="md hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">HAVIT HV-G92 Gamepad</p>
+                        <p>
+                            <span class="text-red-500">$120</span>
+                            <span class="text-gray-400 line-through">$160</span>
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="">
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                            </div>
+                            <p class="text-gray-400">(88)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/ak_900_01_500x500_1_188bf87871.png?updated_at=2025-01-31T06:29:27.990Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="mt-4 h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="eye-outline" role="img" class="md hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">HV-G92 Keyboard</p>
+                        <p>
+                            <span class="text-red-500">$220</span>
+                            <span class="text-gray-400 line-through">$360</span>
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="">
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                            </div>
+                            <p class="text-gray-400">(88)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/g27cq4_500x500_1_5d70771da6.png?updated_at=2025-01-31T06:29:28.344Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="mt-4 h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="eye-outline" role="img" class="md hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">Gaming Monitor</p>
+                        <p>
+                            <span class="text-red-500">$320</span>
+                            <span class="text-gray-400 line-through">$460</span>
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="">
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                            </div>
+                            <p class="text-gray-400">(88)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/sam_moghadam_khamseh_kvmds_Tr_GOBM_unsplash_1_b5bb9fea5f.png?updated_at=2025-01-31T06:29:28.111Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="mt-4 h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="eye-outline" role="img" class="md hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">Minimal Chair</p>
+                        <p>
+                            <span class="text-red-500">$400</span>
+                            <span class="text-gray-400 line-through">$560</span>
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="">
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                                <ion-icon class="text-yellow-500 text-lg md:text-xl md hydrated" name="star"
+                                    role="img"></ion-icon>
+                            </div>
+                            <p class="text-gray-400">(88)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-14 md:mt-14 md:mb-20">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <!-- heading  -->
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <p class="text-black text-md md:text-lg">Wishlist (4)</p>
+                </div>
+                <div>
+                    <button class="border-2 border-gray-300 px-8 py-3 hover:bg-red-500 hover:text-white rounded-md">
+                        Move All To Bag
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cards section-->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/New_Mercedes_Benz_Gtr_Licensed_Ride_on_Car_Kids_Electric_Toy_Car_1_5813733558.png?updated_at=2025-01-31T08:12:46.939Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="trash-outline" class="text-md md hydrated" role="img"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">Kids Electric Car</p>
+                        <p>
+                            <span class="text-red-500">$120</span>
+                            <span class="text-gray-400 line-through">$160</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/Frame_608_f511d937a8.png?updated_at=2025-01-31T08:12:47.588Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="trash-outline" class="text-md md hydrated" role="img"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">Jr. Zoom Soccer Cleats</p>
+                        <p>
+                            <span class="text-red-500">$199</span>
+                            <span class="text-gray-400 line-through">$150</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/GP_11_PRD_3_1_9982e7ae6e.png?updated_at=2025-01-31T08:12:47.165Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="trash-outline" class="text-md md hydrated" role="img"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">HAVIT HV-G92 Gamepad</p>
+                        <p>
+                            <span class="text-red-500">$320</span>
+                            <span class="text-gray-400 line-through">$160</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- card -->
+                <div>
+                    <div
+                        class="bg-gray-100 h-[350px] sm:h-[350px] md:h-[320px] lg:h-[280px] w-full rounded-md flex justify-center items-center relative group">
+                        <img src="https://website-builderx-assets.s3.ap-south-1.amazonaws.com/sam_moghadam_khamseh_kvmds_Tr_GOBM_unsplash_1_b5bb9fea5f.png?updated_at=2025-01-31T06:29:28.111Z"
+                            alt="">
+                        <!-- add to cart -->
+                        <div
+                            class="hidden group-hover:block duration-100 absolute bottom-0 right-0 left-0 py-3 bg-black text-white">
+                            <p class="text-center cursor-pointer">Add To Cart</p>
+                        </div>
+                        <!-- offers -->
+                        <div class="absolute top-3 left-3">
+                            <p class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">
+                                -40%
+                            </p>
+                        </div>
+                        <!-- Heart button -->
+                        <div class="absolute top-3 right-3">
+                            <div
+                                class="h-8 w-8 rounded-full bg-white hover:bg-red-500 hover:text-white duration-200 flex justify-center items-center">
+                                <ion-icon name="trash-outline" class="text-md md hydrated" role="img"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Details -->
+                    <div class="space-y-2 py-3">
+                        <p class="text-md md:text-lg">Minimal Chair</p>
+                        <p>
+                            <span class="text-red-500">$420</span>
+                            <span class="text-gray-400 line-through">$560</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="bg-black text-white pt-20 cursor-pointer">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <!-- Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-8">
+                <!-- Subscribe Section -->
+                <div class="space-y-5">
+                    <h2 class="text-2xl font-bold hover:text-white">Exclusive</h2>
+                    <p class="text-lg hover:text-white">Subscribe</p>
+                    <p class="text-gray-400 hover:text-white">Get 10% off your first order</p>
+                    <div class="flex items-center gap-2 rounded-md border-[1px] border-gray-500 bg-black text-white">
+                        <input type="text" placeholder="Enter your email"
+                            class="w-full p-2 px-4 placeholder-gray-400 rounded-full bg-black">
+                        <button
+                            class="text-gray-400 hover:text-white px-4 py-2 rounded-lg flex justify-center items-center">
+                            <ion-icon name="send-outline"
+                                class="text-lg hover:scale-105 duration-200 md hydrated"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <!-- Support Section -->
+                <div class="space-y-5">
+                    <h3 class="text-lg">Support</h3>
+                    <p class="text-gray-400 hover:text-white">Pindigheb, 43260, Rawalpindi, Pakistan</p>
+                    <p class="text-gray-400 hover:text-white">malikrahid011@gmail.com</p>
+                    <p class="text-gray-400 hover:text-white">+92-3120542109</p>
+                    <p class="text-gray-400 hover:text-white">Connect with us</p>
+                </div>
+                <!-- Account & Quick Links Section -->
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h3 class="text-lg">Account</h3>
+                        <ul class="text-gray-400 space-y-5">
+                            <li><a class="hover:text-white" href="">My Account</a></li>
+                            <li><a class="hover:text-white" href="">Cart</a></li>
+                            <li><a class="hover:text-white" href="">Wishlist</a></li>
+                            <li><a class="hover:text-white" href="">Shop</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6 ">
+                        <h3 class="text-lg">Quick Link</h3>
+                        <ul class="text-gray-400 space-y-5">
+                            <li><a class="hover:text-white" href="">Privacy Policy</a></li>
+                            <li><a class="hover:text-white" href="">Terms Of Use</a></li>
+                            <li><a class="hover:text-white" href="">FAQ</a></li>
+                            <li><a class="hover:text-white" href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Download App Section -->
+                <div class="space-y-4 lg:px-6">
+                    <h3 class="text-lg">Download App</h3>
+                    <p class="text-gray-400">Save $3 with App New User Only</p>
+                    <div class="flex items-center gap-4">
+                        <img src="../qr.png" alt="" class="w-full">
+                    </div>
+                    <div class="flex items-center text-white/70 gap-6">
+                        <ion-icon class="text-2xl hover:text-white md hydrated" name="logo-facebook"></ion-icon>
+                        <ion-icon class="text-2xl hover:text-white md hydrated" name="logo-twitter"></ion-icon>
+                        <ion-icon class="text-2xl hover:text-white md hydrated" name="logo-instagram"></ion-icon>
+                        <ion-icon class="text-2xl hover:text-white md hydrated" name="logo-linkedin"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="border-t border-white/15 mt-12 text-center text-white/30 flex justify-center items-center py-6">
+            <p>© 2025 Website builder. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // btn click 
+        const dropdown = document.getElementById("openUl");
+        const Clickonbtn = document.getElementById("Clickonbtn");
+
+        Clickonbtn.addEventListener("click", () => {
+            dropdown.classList.toggle("hidden")
+        })
+
+        // everywhere click close dropdown 
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target) && !Clickonbtn.contains(e.target)) {
+                dropdown.classList.add("hidden")
+            }
+        });
+
+        // home click 
+        document.getElementById('openhome').addEventListener('click', function () {
+            window.location.href = "Estore.html"; // Redirect to page2
+        });
+
+        // signup 
+        document.getElementById('opensignup').addEventListener('click', function () {
+            window.location.href = "Signup.html"; // Redirect to page2
+        });
+        // login 
+        document.getElementById('openlogin').addEventListener('click', function () {
+            window.location.href = "Login.html"; // Redirect to page2
+        });
+        // whishlist 
+        document.getElementById('openwhishlist').addEventListener('click', function () {
+            window.location.href = "wishlist.html"; // Redirect to page2
+        });
+        // cart 
+        document.getElementById('opencart').addEventListener('click', function () {
+            window.location.href = "cart.html"; // Redirect to page2
+        });
+        // cheackout 
+        document.getElementById('opencheckout').addEventListener('click', function () {
+            window.location.href = "Checkout.html"; // Redirect to page2
+        });
+        // acc details 
+        document.getElementById('openaccounts').addEventListener('click', function () {
+            window.location.href = "AccountDetails.html"; // Redirect to page2
+        });
+        // About 
+        document.getElementById('openabout').addEventListener('click', function () {
+            window.location.href = "About.html"; // Redirect to page2
+        });
+        // Contact 
+        document.getElementById('opencontact').addEventListener('click', function () {
+            window.location.href = "ContactUs.html"; // Redirect to page2
+        });
+        // Not Found 
+        document.getElementById('opennotfoundpage').addEventListener('click', function () {
+            window.location.href = "NotFound.html"; // Redirect to page2
+        });
+
+
+    </script>
+
+</body>
+
+</html>
